@@ -1,31 +1,39 @@
 const min = 1;
 const max = 100;
 
-// const a = randomNumber(min, max);
-// const b = randomNumber(min, max);
-// const c = randomNumber(min, max);
+const a = randomNumber(min, max);
+const b = randomNumber(min, max);
+const c = randomNumber(min, max);
 
-// console.log(a, b, c);
+console.log(a, b, c);
 
 function randomNumber(min, max) {
 	return Math.round(Math.random() * (max - min) + min);
 }
 
-
-
-
 function getSum(a, b, c) {
-	return a + b + c;
+	//1
+	const aInt = parseInt(a);
+	const bInt = parseInt(b);
+	const cInt = parseInt(c);
+
+	//2
+	const arr = [aInt, bInt, cInt];
+	arr.sort((a, b) => {
+		return b - a;
+	});
+
+	//3
+
+	return arr[0] + arr[1];
 }
 
 console.log(getSum(2, 4, 6));
 
-
 const isEven = (number) => {
 	if (typeof number !== "number") {
 		return null;
-	}
-	if (number % 2 === 0) {
+	} else if (number % 2 === 0) {
 		return true;
 	}
 	return false;
@@ -43,10 +51,9 @@ const showInfo = (value, condition) => {
 			break;
 		case false:
 			console.log(`podana liczba ${value} nie jest parzysta`);
-        default:
-            console.log(`nieprawidłowe wartości`);
+		default:
+			console.log(`nieprawidłowe wartości`);
 	}
 };
 
-console.log(showInfo('12', true));
-
+console.log(showInfo("12", true));
