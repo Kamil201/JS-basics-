@@ -51,6 +51,7 @@ const showInfo = (value, condition) => {
 			break;
 		case false:
 			console.log(`podana liczba ${value} nie jest parzysta`);
+			break
 		default:
 			console.log(`nieprawidłowe wartości`);
 	}
